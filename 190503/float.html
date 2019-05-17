@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>float 기본 다지기</title>
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="layout.css">
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	color: #222;
+	font-size: 13px;
+	border:0;
+	box-sizing:border-box;
+}
+
+div{
+	width: 100px;
+	height: 100px;
+	background-color: pink;
+	color: #fff;
+	font-size: 50px;
+}
+
+.box{
+	 
+	width: 100%;
+	height: auto;
+	background-color: bisque;
+	padding: 10px;
+	margin-bottom: 40px;
+}
+
+.clear {
+	height: auto;
+	background-color: transparent;
+	clear: both;
+	width: 100%;
+}
+
+.a{
+	float: left;
+}
+.b{
+	float: right;
+	background-color:darkseagreen;
+}
+.c{
+	height: 200px;
+	background-color: cornflowerblue;
+	float: left;
+	clear: both
+}
+</style>
+
+</head>
+<body>
+	<div class="box">
+		<div class="a">a</div>
+		<div class="b">b</div>
+		<div class="clear"></div>
+</div>
+	<div class="c">c</div>
+</body>
+</html>

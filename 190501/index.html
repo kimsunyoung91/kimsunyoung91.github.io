@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>기본구조</title>
+	<link rel="stylesheet" type="text/css" href="/190501/css/layout.css">
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+	border: 0;
+	color: #222;
+	font-size: 13px;
+	font-style: normal;
+	text-decoration: none; /* 언더라인으로 하면 노출 */
+}
+div {
+	overflow:auto; 
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+	padding: 20px;
+	border: 1px solid #000;
+	box-sizing: border-box
+}
+
+
+.a{visibility: hidden;} /*  비지블-보임 , 히든 숨김  / 비지빌리티는 영역은 있지만 내용만 사라짐 */
+.b{display: none;} /* 디스플레이 논은 영역 자체가 사라짐 / 논-안보임 , 블럭-보이게(블록요소로 바꿔서 보이게),인라인(인라인 요소가 시켜서 보이게 해라),인라인-블록 */
+.c{}
+</style>
+</head>
+<body>
+	<div class="a">
+		a 근로자의 날 -나무나무 ㅇ위키윜위퀴
+		https://namu.wiki/w/근로자의%20날
+		근로자의 날은 엄연히 근로기준법에 따른 유급 휴일로 지정되어있다. 따라서 이 날 근무를 한다면 당연히 휴일 근로수당을 받아야 한다. 
+		그러나 노동자의 권리 보장
+	</div>
+	<div class="b">
+		b 근로자의 날 -나무나무 ㅇ위키윜위퀴
+		https://namu.wiki/w/근로자의%20날
+		근로자의 날은 엄연히 근로기준법에 따른 유급 휴일로 지정되어있다. 따라서 이 날 근무를 한다면 당연히 휴일 근로수당을 받아야 한다. 
+		그러나 노동자의 권리 보장
+	</div>
+	<div class="c">
+		c 근로자의 날 -나무나무 ㅇ위키윜위퀴
+		https://namu.wiki/w/근로자의%20날
+		근로자의 날은 엄연히 근로기준법에 따른 유급 휴일로 지정되어있다. 따라서 이 날 근무를 한다면 당연히 휴일 근로수당을 받아야 한다. 
+		그러나 노동자의 권리 보장
+	</div>
+</body>
+</html>

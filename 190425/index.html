@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 
+		form요소
+		filedset
+		legend - 폼요소의 제목
+		input- 레이블 안으로 묶임가능
+		select - 레이블 안으로 묶임가능
+		textarea- 레이블 안으로 묶임가능
+		button
+
+		input의 type속성 종류
+
+		type="text"
+		type="password"
+		type="checkbox"
+		type="img"
+		type="button"
+		type="submit"
+		type="reset"
+
+
+		select
+		option
+
+		textarea
+		label- 
+
+	
+	 -->
+
+	 
+	 <input type="checkbox" name="" id="yes">  
+	 <label for="yes">동의하시겠습니까?</label>  <!-- 아이속성은 한문서의 고유값 한태그에는 아디값이 하나밖에 못온다 -->
+	 <!-- 인풋 아이디 값 과 레이블의 폴 값을 동일하게 해주면 매칭시켜주는 것이다. -->
+
+	 <label>
+		 <input type="checkbox" name="">
+		 <span>동의하시겠습니까?</span><!-- 스팬태그로 한 이유는 디자인 넣어주려고 -->
+	 </label>
+	 <!-- 레이블은 꼭 사용해야 합니다.(접근성작업) -->
+
+<form method="" action="https">
+<fieldset>	<!-- 필드셋 원래 사용안하는데 그냥해봄 / 사용하지 말라고함 잘 안써서  -->
+<legend>회원가입</legend><!-- 레젼드 원래 사용안하는데 그냥해봄 / 사용하지 말라고함 잘 안써서 -->
+	 <div>
+		 <table>
+			 <caption>회원가입 폼</caption>
+			 <colgroup>
+				<col>
+				<col>
+			</colgroup>
+			<tbody>
+				<tr>
+					<th scope="row">아이디</th>
+					<td>
+						<label>
+							<span>아이디 입력</span> <!-- 스펜 입력하는게 접근성  -->
+							<input type="text" name="" title="아이디를 입력해주세요"> 
+						</label>
+						<button>중복확인</button>
+						<input type="button" value="중복확인">
+						<input type="submit" value="중복확인">
+						<input type="image" src="이미지경로" alt="중복확인">
+						<a href="#"> 중복확인</a>
+						<!-- 위 버튼 예시안  -->
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">이름</th><!-- 접근성 고려할때 스코프 필수 삽입 -->
+					<td>
+						<label>
+							<input type="text" name="">
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">성별</th><!-- 접근성 고려할때 스코프 필수 삽입 -->
+					<td>
+						<label>
+							<input type="radio" name="rad" checked><!-- 라디오나 셀렉트같은 선택박스는 checked 써줘야 먼저 선택이 된 상태로 노출 / 표준 이전에는 checked="checked" 값까지 입력해줘야 함    -->
+							<span>남</span>
+						</label>
+						<label>
+							<input type="radio" name="rad"><!-- 네임값을 동일하게 하면 단일선택이된다  -->
+							<span>여</span>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<th>암호</th>
+					<td>
+						<legend>
+							<input type="password" name="">
+						</legend>
+					</td>
+				</tr>
+				<tr>
+					<th>암호확인</th>
+					<td>
+						<legend>
+							<input type="password" name="">
+						</legend>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">이메일</th>
+					<td>
+						<label>
+							<input type="text" name="" title="이메일 아이디 입력">
+						</label> @
+						<label>
+							<input type="text" name="" title="이메일 주소 입력">
+						</label>
+						<label>
+							<select name="" title="이메일 주소 직접 선택">
+								<option>선택</option>
+								<option>naver.com</option>
+								<option>hanmail.net</option>
+							</select>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<th>주소</th>
+					<td>
+						<div>
+							<label>
+								<input type="text" name="">
+							</label>
+							<button>우편번호 찾기</button>
+						</div>
+						<label>
+							<input type="text" name="" title="주소입력">
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<th>휴대폰</th>
+					<td>
+						<div>
+							<label>
+							<input type="radio" name="rad">
+							<span>SKT</span>
+							</label>
+							<label>
+							<input type="radio" name="rad">
+							<span>KT</span>
+							</label>
+							<label>
+							<input type="radio" name="rad">
+							<span>LG</span>
+							</label>
+					</div>
+					<div>
+						<label>
+							<select name="">
+								<option>선택</option>
+								<option selected>010</option> <!-- 옵션에 셀렉티드라고 주면 해당 옵션이 먼저 선택되어 노출됨 -->
+							</select>
+						</label> -
+						<label>
+							<input type="text" name="">
+						</label> -
+						<label>
+							<input type="text" name="">
+						</label>
+					</div>
+					</td>
+				</tr>
+				<tr>
+					<th>관심사</th>
+					<td>
+						<label>
+							<input type="checkbox" name="" checked>
+							<span>쇼핑</span>
+						</label>
+						<label>
+							<input type="checkbox" name="">
+							<span>게임</span>
+						</label>
+						<label>
+							<input type="checkbox" name="">
+							<span>영화</span>
+						</label>
+						<label>
+							<input type="checkbox" name="">
+							<span>기타</span>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<th>자기소개</th>
+					<td>
+						<label>
+							<textarea cols=70 rows="7"> 
+자기소개 내용을 
+써주세요.
+							</textarea> <!-- 안의 내용 쓸수있는데 쓸때 맨앞으로 붙여서 써줘야 한다 --><!-- 콜스랑 로우스 형식만 갖쳐주면 됨 -->
+						</label>
+					</td>
+				</tr>
+			</tbody>
+		 </table>
+	 </div>
+	 <div>
+		 <button>회원가입</button>
+		 <input type="submit" name="" value="확인">
+		 <input type="button" name="" value="다시입력">
+		 <input type="reset" name="" value="초기화">
+		 <input type="hidden" name="" value="초기화">
+	 </div>
+</fieldset>
+</form><!-- 폼은 전송버튼까지 같이 묶어준다 그래서 제일 마지막에 폼을 써주거나 아니면 안쓴다, 개발자가 쓰게끔 -->
+	 <!-- name 안썻다고 표준에 어긋나는게 아니래 -->
+
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+
+<!-- id 값은 개발자랑 충돌할 수 있음 그래서 잘 안씀 -->
+
+<!-- 
+	id 속성 = 한 문서 안에 하나의 아이디만 가질 수 있음.(중복되서 사용하면 문법오류임)
+	class 속성 = 한 문서 안에 여러개 또는 한요소에 다중으로 지정할 수 있음.
+	<div id="userID"></div>
+	<div class="clsa clsb clsc"></div> <-클래서 다중의 예
+    ㄴ아이디와 클래스의 가장 큰 차이점
+
+id나 class 네이밍 생성시 주의사항
+ - 첫번째 오는 문자는 소문자 사용, 
+ - 첫번째 오는 문자는 숫자먼저 올 수 없음
+ - 특수문자 사용 불가 
+	ㄴ단 허용가능 특수문자 _(언더바) / -(대시) 두가지는 사용가능
+	 <button class="btn btn-list btn-blue">
+	
+
+css
+#<- 아이디
+.<- class
+ -->
+
+
+<div class="header"></div>
+<div class="main">
+	<div class="sidemenu"></div>
+	<div class="section"></div>
+	<div></div>
+</div>
+<div class="footer"></div>
+
+<header class="header"></header>
+<main class="main">
+	<section class="sidemenu"></section>
+	<section class="section"></section>
+</main>
+<footer class="footer"></footer>
+
+
+<!-- http://uxcss.com/study/css/guide/index.html 강사님 css 정리 -->
+
+
+<!-- 
+
+css 기본
+
+#id
+.class
+.footer[title]
+
+{ 중복값이 있으면 제일 마지막에 사용한 값이 적용됨}
+
+ -->
+
+
+
+
+
+
+</body>
+</html>

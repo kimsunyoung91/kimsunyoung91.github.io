@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>float을 활용한 레이아웃</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
+	<style>
+		/* reset */
+		*{
+	margin: 0;
+	padding: 0;
+	color: #222;
+	font-size: 13px;
+	border:0;
+	box-sizing:border-box;
+}
+	.clear{
+		clear:both; 
+		width: 100%;
+		height: auto ;
+	}
+
+/* layout */
+
+.wrap{
+	padding: 20px;
+	background-color: palevioletred;
+	text-align: center;
+}
+
+.wrap *{
+padding: 10px;
+border:1px solid #222;	
+background-color: white;
+margin-bottom: 10px;
+}
+
+.header{
+	min-height: 100px;
+	padding: 10px;
+	border: 1px solid #222;
+	text-align: center;
+
+}
+.nav{
+	min-height: 80px;
+	padding: 10px;
+	border:  1px solid #222;
+	text-align: center;
+}
+.container{
+	overflow: hidden;
+
+}
+
+.main{
+	padding: 10px;
+	overflow: hidden;
+	position: relative;
+}
+
+.main span{
+	position:absolute;
+	top:5px;
+	left: 50%;
+	transform: translateX(-50%)
+}
+.main .article{
+	width: 49%;
+	padding: 1%;
+	min-height: 80px;
+}
+
+.main .fleft{
+float: left;
+}
+.main .fright{
+	float:right;
+}
+
+
+.section{
+	padding: 1%;
+	float: left;
+	width: 47%
+}
+
+.section .article{
+	min-height: 209px;
+}
+
+.aside{
+	padding: 1%;
+	float: right;
+	width: 47%
+}
+
+.figure{
+
+}
+.imgbox{
+	min-height: 100px;
+ background-color: aquamarine;
+}
+.figcaption{
+min-height: 50px;
+}
+
+.footer{
+	min-height: 60px;
+	margin-bottom: 10px;
+}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<header class="header">header</header>
+		<nav class="nav">nav</nav>
+		<main class="container">
+			<main class="main"><span>main</span>
+				<article class="article fleft">article1</article>
+				<article class="article fright">article2</article>
+			</main>
+			<section class="section">section
+				<article class="article">article</article>
+			</section>
+			<aside class="aside">aside <!-- 이미지 넣을때 많이 사용 -->
+				<figure class="figure">
+					figure
+					<div class="imgbox">img</div>
+					<figcaption class="figcaption">figcaption</figcaption>
+				</figure>
+			</aside>
+			<!-- <div class="clear"></div> -->
+		</main>
+		<footer class="footer">footer</footer>
+	</div>
+</body>
+</html>

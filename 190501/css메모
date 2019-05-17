@@ -1,0 +1,170 @@
+css
+div p - div 하위에 있는 p 전체선택 
+div>p - div 바로 밑 p만 선택
+
+
+*인라인 스타일 방식 - 태그안에 바로 스타일을 지정하는 형식
+<div style=""></div>
+
+ ㄴ 너무 많이 하면 안된 유지보수 힘들다 
+ ㄴ 인라인 스타일이 우선순위 제일 높다 
+
+
+ *링크 외부문서 불러들이는 방식 
+ linkd 방식
+  
+
+	
+	<head>
+	<linkd rel ="stylesheet" type="text/css" href="CSS경로"></linkd>
+	</head>
+
+ ㄴ 제일 많이 활용하는 방식
+
+
+
+ *해드 안에 스타일 직접적으로 쓰는 방식 (internel방식)
+ 	<head>
+	<style>
+		*{margin:100%;}
+	</style>
+	</head>
+
+	 -> 최근 바디 안에다 쓰는것도 허용됨
+
+
+*임포트 url 방식 - 비권장 방식 / 속도가 느리다.
+<style>
+@import url ('CSS경로');
+</style>
+
+ㄴ 임포트 방식은 가장 위에 노출시켜야함 그래야 불러온다
+
+
+
+
+
+*************************문법**************************
+
+-숨기 역활
+overflow  - 넘침 제어
+	 overflow-x
+	  -overflow-x:scroll; - [스크롤 영역 생김 / 스크롤값 주면 ]
+	 overflow-y
+
+visibility - 숨김 처리
+display - 숨김 처리
+
+-좌표값에 대한 순서 제어를 할 수 있는 것 / 위치 조절
+position
+top
+right
+bottom
+left
+z-index
+
+float
+clear
+
+-박스모델 / 박스크기 or 여백
+width
+height
+margin
+  -margin-top 
+	-margin-right
+	-margin-bottom
+	-margin-left
+padding
+  padding-top
+	padding-right
+	padding-bottom
+	padding-left
+
+border
+  border-color
+	border-width
+	border-style
+
+  border-top-color
+	border-right-color
+	border-bottom-color
+	border-left-color
+
+  border-top-width
+	border-right-width
+	border-bottom-width
+	border-left-width
+
+  border-top-style
+	border-right-style
+	border-bottom-style
+	border-left-style
+
+	border-radius / 라운드 처리
+
+
+-배경지정
+background 
+	background-color 
+	background-repeat 
+	background-position 
+	background-image
+	background-attchment / 고정여부
+	background-size
+
+
+-폰트
+
+color
+	font-size
+	font-weight
+	font-family / 서체지정
+	line-height
+
+text-align
+vertical-align / 위아래 세로정렬
+
+text-transform
+text-decoration
+text-indent / 들여쓰기 내어쓰기 
+
+letter-spacing
+word-spacing
+
+
+box-sizing
+box-shadow
+text-shadow
+
+text-overflow
+white-space
+
+
+
+inherit - 부모의 속성을 상속 받는다 
+initial
+visivle - 박스 밖 노출 할때 
+
+
+
+
+
+
+
+
+****************응용******************
+
+margin:0 0 0 0;
+margin:0 0 0; - 상 좌우 하
+margin:0,0; - 상하 좌우
+
+
+color:#222;
+color:rgb(255,255,255);
+color:rgba(255,255,255,0.5);
+
+
+※※※※※※※※ css 처음 작업시 초기화 시킨다 
+
+
+https://caniuse.com/ - css 사용가능 여부 체크할 수 있는 사이트

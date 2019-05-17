@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>poistion 기본</title>
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="/190501/css/layout.css">
+	<style>
+	/*   초기화 */
+	*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	line-height: 1;
+	font-size: 13px;
+	color: #333333;
+	text-decoration: none;
+	box-sizing: border-box;
+
+	}
+
+	/* 포지션 기본개념
+	static - 좌표값들 안먹힘 / 해제시킴 
+	상대값 - relative : 기준은 본인 자신이 됨 (현재 위치에서 움직임)
+	절대값 - absolute : 기준은 부모에 , 부모에 포지션 속성이 없으면 body가 됨 (최상의 포지션)
+	고정값 - fixed : 기준(부모)은 body기준으로 고정됨 / 퀵메뉵 부분쪽 
+
+	지정영역 고정(스크롤) - sticky 
+
+	z-index - 포지션의 순서를 제어(숫자가 높으록 위로 올라옴)
+	
+	*/
+
+section{
+	/* position: relative; */
+	width: 300px;
+	height: 300px;
+	/* border: 1px solid #000 */
+}
+div{
+	width: 100px;
+	height: 100px;
+	border: 1px solid;
+	position:absolute;
+	min-width: 80px;/* min 최소 */
+	min-height: 80px;
+	max-width: 150px;/* max 최대값 */
+	max-height: 150px;
+
+}
+
+.a{
+	border-color: brown;
+	z-index: 1;
+}
+.b{
+	right: 0;
+	border-color: black;
+}
+/* 
+가운데 정렬 1번째 방법
+.c{
+	border-color: aqua;
+	top:50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -50px;
+} */
+
+/* 
+가운데 정렬 2번째 방법 (정확도 높음)
+.c{
+	border-color: aqua;
+	top:0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+	
+} */
+
+.c{
+	/* 3번째 방법 -하위 브라우저에서 안먹힐수도 있음 */
+	border-color: aqua;
+	top:50%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+	/* transform:translateX(-50%);
+	transform:translateY(-50%); */
+
+	
+}
+.d{
+	right: 0;
+	bottom: 0;
+	border-color: blueviolet;
+}
+.e{
+	bottom: 0;
+	left: 0;
+	border-color: darkgreen;
+}
+
+/* 
+포지션을 활용 한 가운데 정렬 방법
+1. 사이즈가 고정된 상태에서 
+	ㄴ top:50% , left: 50% , margin-top,left:(박스사이즈의 반절값 -음수로)
+	
+
+
+ */
+	</style>
+</head>
+<body>
+	<section>
+		<div class="a"></div>
+		<div class="b"></div>
+		<div class="c"></div>
+		<div class="d"></div>
+		<div class="e"></div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="/190507/css/layout.css">
+	<link rel="stylesheet" type="text.css" href="/190507/css/reset.css">
+	<style>
+
+		/* www.w3.org.TR/2018/REC-selectors-3-20181106/#specificity */
+
+		/* 초기화 */
+		*{
+			margin: 0;
+			padding: 0;
+			border: 0;
+			color: #222;
+			font-size: :13px;
+			font-style: normal;
+			box-sizing:border-box;
+		}
+
+		html,body{height: 100%;}
+
+		/* float 해제 시키는 방법 
+		overflow
+		.clear{
+			clear:both;
+		}
+		*/
+		.clear{
+			clear:both;
+			width: 100%;
+			height: auto;
+		}
+
+		/* latout */
+		.header{
+			width:700px;
+			height: 80px;
+			background-color: palevioletred;
+			margin: 0 auto;
+		}
+		.main{
+
+			overflow: visible; 
+			width: 700px;
+			margin:0 auto 20px;
+			padding:10px 0;
+			background-color:peru;
+			
+		}
+		.sidemenu{
+			width: 120px;
+			min-height: 500px;
+			background-color: palegreen;
+			float: left;
+			margin-right: -100%;
+		}
+		.csection{
+			float: right;
+			width: 550px;
+			min-height: 800px;
+			background-color: papayawhip;
+		}
+		.quick
+		{
+			/* position: absolute;
+			top:10px;
+			right: -60px; */
+			top:500px;
+			position: fixed;
+			width: 50px;
+			height: 100px;
+			margin-left: 710px;
+			background-color: #000;
+			
+		}
+
+		.footer{
+			width: 700px;
+			height: 50px;
+			background-color: paleturquoise;
+			margin: 0 auto;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="header"></div>
+	<!-- //header -->
+	<div class="main">
+		<div class="sidemenu"></div>
+		<!-- //sidemenu -->
+		<div class="csection"></div>
+		<!-- //csection-->
+		<div class="quick"></div>
+		<!-- //quick-->
+		<div class="clear"></div>
+	</div>
+	<!-- //footer -->
+	<div class="footer"></div>
+
+
+
+</body>
+</html>

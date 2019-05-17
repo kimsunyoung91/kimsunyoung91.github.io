@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>float을 활용한 레이아웃</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
+	<style>
+		/* reset */
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	.clear{
+		clear:both; 
+		width: 100%;
+		height: auto ;
+	}
+
+	/* layout */
+	.header {
+		width:100%;
+		border-bottom: 1px solid black;
+
+	}
+
+	.headerwrap{
+		width: 700px;
+		height: 80px;
+		margin: 0 auto;
+		background-color: slateblue;
+	}
+
+	.footer{
+		width: 100%;
+		border-top:1px solid black;
+
+	}
+
+
+	.footerwrap
+	{
+		width: 700px;
+		height: 50px;
+		margin: 0 auto;
+		background-color:palevioletred
+	}
+
+	.main{
+	position: relative;
+	background-color: papayawhip;
+	width: 700px;
+	margin: 0 auto;
+	padding: 0;
+	}
+	.sidemenu
+	{
+		float: left;
+		width: 150px;
+		margin-right: -100%;
+		min-height: 500px;
+		margin-right: -100%;
+		background-color: rgb(137, 205, 250);
+	
+
+	}
+	.csection
+	{
+	min-height: 700px;
+	margin-left:150px;
+	padding:0 15px 50px;
+	border-left:1px solid darkgreen;
+	background-color: plum;
+	}
+	.quick{
+		position: fixed;
+		top:80px;
+		width: 50px;
+		height: 80px;
+		margin-left: 710px;
+		background-color: brown;
+	}
+
+
+	</style>
+</head>
+<body>
+	
+<header class="header">
+	<div class="headerwrap"></div>
+</header>
+<main class="main">
+	<section class="sidemenu"></section>
+	<main class="csection">
+  contents
+	</main>
+	<aside class="quick">
+
+	</aside>
+	<div class="clear"></div>
+</main>
+<footer class="footer">
+	<div class="footerwrap"></div>
+</footer>
+
+</body>
+</html>

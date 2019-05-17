@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>float을 활용한 레이아웃</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
+	<style>
+		/* reset */
+		*{
+	margin: 0;
+	padding: 0;
+	color: #222;
+	font-size: 13px;
+	border:0;
+	box-sizing:border-box;
+}
+	.clear{
+		clear:both; 
+		width: 100%;
+		height: auto ;
+	}
+
+/* layout */
+
+.wrap{
+	padding: 20px;
+	background-color: antiquewhite;
+	text-align: center;
+}
+
+.wrpa *{
+padding: 10px;
+border:1px solid #222;	
+}
+.header{
+	min-height: 100px;
+	padding: 10px;
+	border: 1px solid #222;
+	text-align: center;
+
+}
+.nav{
+	min-height: 80px;
+	padding: 10px;
+	border:  1px solid #222;
+	text-align: center;
+}
+.container{
+	
+
+}
+.footer{
+	min-height: 60px;
+}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<header class="header">header</header>
+		<nav class="nav">nav</nav>
+		<main class="container"></main>
+		<footer class="footer">footer</footer>
+	</div>
+</body>
+</html>

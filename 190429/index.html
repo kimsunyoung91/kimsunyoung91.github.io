@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>마크업 기본 - 폼요소 속성 알아보기</title>
+</head>
+<body>
+	<!-- 
+	input
+	type="text"
+	type="password"
+	type="chekebox" -다중선택
+	type="radio" - 단일선택
+
+
+	*버튼은 레이블 안으로 안묶음
+	type="button" value="확인" - 벨류값으로 버튼 노출
+	type="submit" value="확인" - 벨류값으로 버튼 노출
+	type="image" src="이미지 경로" alt="확인"
+	type="reset" value="초기화"
+
+	select
+	<select nbame="">
+		<option></option>
+	</select>
+
+	textarea
+	<textarea cols="70" row="7"</textarea>
+
+		
+	 -->
+
+	 <form method="PSOT" action="/해당경로로 넘어감"></form>
+	 <fieldset>
+		 <legend>폼제목</legend>
+		 <table>
+			 <caption>테이블제목</caption>
+			 <colgroup>
+				<col>
+				<col>
+			 </colgroup>
+			 <tbody>
+				 <tr>
+					 <th scope="row">이름</th> 
+					 <td>
+						 <label>
+							 <input type="text" name="" placeholder="이름을 입력해주세요"> 
+						 </label>
+					 </td>
+				 </tr>
+				 <tr>
+						<th scope="row">패스워드</th> 
+						<td>
+							<label>
+								<input type="password" name="" required>
+							</label>
+							<label>
+									<input type="text" name="비밀번호" readonly><!-- 고정값 사용할때 리드온니 -->
+								</label>
+								<label>
+										<input type="text" name="" disabled><!-- 고정값 사용할때 리드온니 -->
+									</label>
+						</td>
+					</tr>
+					<tr>
+							<th scope="row">성별</th> 
+							<td>
+								<label>
+									<input type="radio" name="1" checked><!-- 네임에 아무 이름이나 넣어줘야지 개별적으로 하나씩 선택이 된다  -->
+									<span>여</span>
+								</label>
+								<label>
+										<input type="radio" name="1">
+										<span>남</span>
+									</label>
+							</td>
+						</tr>
+						<tr>
+								<th scope="row">분야</th> 
+								<td>
+									<label>
+										<input type="checkbox" name="">
+										<span>음악</span>
+									</label>
+									<label>
+											<input type="checkbox" name="">
+											<span>영화</span>
+									</label>
+									<label>
+											<input type="checkbox" name="">
+											<span>스포츠</span>
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<th>전화번호</th>
+								<td>
+									<label>
+								 		<select name="">
+											 <option>선택</option>
+											 <option selected>02</option>
+											 <option>010</option>
+											 <option>012</option>
+										</select>
+									</label>
+									<label>
+											<select name=""> <!-- 지역별로 나누어 표현할때 -->
+												<optgroup label="서울특별시">
+													<option>강남구</option>
+													<option>구로구</option>
+													<option>동작구</option>
+												</optgroup>
+												<optgroup label="부산광역시">
+														<option>만덕구</option>
+													</optgroup>
+										 </select>
+									 </label>
+									<label>
+											<input type="text">
+									 </label>-
+									 <label>
+											<input type="text">
+									 </label>
+								</td>
+							</tr>
+							<tr>
+								<th>주소</th>
+								<td>
+									<div>
+										<label>
+											<input type="text" name="">
+											<a href="#">우편번호</a>
+										</label>
+									</div>
+									<div>
+										<label>
+											<input type="text" name="" title="주소입력">
+											<a href="#">우편번호</a>
+										</label>
+									</div>
+									<div>
+											<label>
+												<input type="text" name="" title="상세주소입력">
+												<a href="#">우편번호</a>
+											</label>
+										</div>
+								</td>
+							</tr>
+							<tr>
+									<th>기타입력</th>
+									<td>
+										<label>
+											<textarea cols="70" rows="7">
+들여쓰기 하지마세요~~
+											</textarea>
+										</label>
+									</td>
+								</tr>
+			 </tbody>
+		 </table>
+	 </fieldset>
+	 <div>
+		 <button>확인</button> <!-- 버튼 태그 1 -->
+		 <input type="button" value="확인"><!-- 버튼 태그 2 -->
+		 <input type="submit" value="확인"> <!-- 버튼 태그 3 -->
+		 <input type="image" src="이미지경로" value="확인"> <!-- 버튼 태그 4 -->
+		 <a href="#">확인</a> <!-- 버튼 태그 5 -->
+		 <!-- 버튼 태그 상황에 따라서 알맞은걸로 사용 -->
+		 <input type="reset" value="초기화">
+	 </div>
+</body>
+</html>

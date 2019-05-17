@@ -1,0 +1,236 @@
+/* 셀렉터여 연습 */
+
+/* 
+
+가상클래스
+:hover
+:visited
+:focus
+:active
+
+
+
+[] - 태그의 속성 선택할 때 사용
+ex)
+img[alt]
+img [alt="로고"]{}
+img [title]{}
+img [src*="a.jpg"]{}  - 해당 파일명을 가지고 있는거 다 선택해라
+img [src^="a.jpg"]{}  - 이미지 경로의 시작점
+img [src$=".jpg"]{} -.jpg 로 끝나는 태그 다 선택해라
+a[target]{}
+input [type="button"]{}
+
+
+:first-child - 첫 번째 요소 선택
+:first-of-type- 
+:last-child - 마지막 번째 요소 선택
+:last-of-type
+
+*/
+
+div,p {
+	border:1px solid #222;
+	padding:50px;
+}
+
+div:first-child{
+	background-color: blue;
+}
+
+p:first-of-type{
+	background-color: green;
+}
+
+div:last-child{
+	background-color: yellow;
+}
+
+div:last-of-type{
+	background-color: red;
+}
+
+
+ul::after{
+	content: "";
+	display:block;
+	clear: both;
+}
+
+li{
+	float:left;
+	width: 100px;
+	height: 100px;
+	border: 1px solid #222;
+	padding: 20px;
+}
+
+li:nth-child(4n+1){
+	clear: both;
+}
+
+/* 
+0+1=1
+1+
+
+*/
+
+li.clear{
+	width: 100px;
+	height: 100px;
+}
+/* 
+
+nth 선택자
+:nth-child(2) - 몇번째 요소를 직접적으로 지정
+:nth-of-typr(2) - 몇번째 요소를 직접적으로 지정
+
+*/
+
+div:nth-of-type(2){
+	padding: 100px;
+}
+
+
+
+/* 
+
+가상요소 
+::before{}  -::두개 사용하는 이유는 구분을 하기 위해서
+::after{}
+
+*/
+
+
+section{
+	width: 300px;
+	height: 300px;
+	margin: 0 auto;
+	border: 2px solid #222;
+}
+
+
+
+section::before{
+	content:"전";
+		display: inline-block;
+}
+
+section::after{
+	content:"후";
+	display: inline-block;
+}
+
+section label{
+	display: inline-block;
+	position: relative;
+	margin: 0 10px;
+
+}
+/* 
+section label span{
+	display: inline-block;
+	width: 88px;
+	height: 88px;
+	background: url(../img/ico_s1_off.png) no-repeat 50% 50%;
+	color: transparent;
+}
+
+/* section label:nth-child(2) span {
+	background-image: url(../img/ico_s2_off.png);
+} */
+
+/* section label+label span {
+	background-image: url(../img/ico_s2_off.png);
+} */
+
+/* 
+section label:nth-of-type(2) span {
+	background-image: url(../img/ico_s2_off.png);
+}
+
+
+section label input{
+	position: absolute;
+	z-index: -1;
+}
+ */ 
+
+
+/* checked 되었을 때 이미지 바꾸기 */
+/* section label input:checked + span{
+	background-image:url(../img/ico_s1_on.png);
+}
+
+section label:nth-of-type(2) input:checked + span {
+	background-image: url(../img/ico_s2_on.png);
+}
+
+ */
+
+
+/* 
+float 해제 시키는 방법
+1. 마크업 맨 마지막 요소로 빈 요소 삽입해서 class="clear"
+2. float사용 된 자식의 부모요소에 overflow  속성 사용
+3. float사용 된 자식의 부모요소에 가상요소 활용한 ::after  활용하여 css로 clear:both 시키는 방법 
+ ex)
+	ul
+	 li
+	ul::after{
+		content:"";
+		clear:both;
+		display:block;
+	li{float:left}
+
+*/
+
+
+.ul > li{  /* > 꺽쇠 표시는 자식만 선택함 */
+	background-color: blue;
+}
+
+ul+section{
+	background-color: yellow;
+}
+
+
+
+
+
+
+
+
+section label span{
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	padding-left: 32px;
+	background: url(../img/ico_s1_off.png) no-repeat 0 50%;	
+	background-size: 28px 28px;
+	line-height: 28px;
+	font-size: 30px;
+}
+
+
+section label:nth-of-type(2) span {
+	background-image: url(../img/ico_s2_off.png);
+}
+
+
+section label input{
+	position: absolute;
+	z-index: -1;
+}
+
+/* checked 되었을 때 이미지 바꾸기 */
+section label input:checked + span{
+	background-image:url(../img/ico_s1_on.png);
+	color: blueviolet;
+	
+}
+
+section label:nth-of-type(2) input:checked + span {
+	background-image: url(../img/ico_s2_on.png);
+}
+

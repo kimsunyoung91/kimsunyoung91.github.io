@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+		<div>
+				<table>
+					<caption>회원가입 폼</caption>
+					<colgroup>
+					 <col>
+					 <col>
+				 </colgroup>
+				 <tbody>
+					 <tr>
+						 <th scope="row">아이디</th>
+						 <td>
+							 <label>
+								 <span>아이디 입력</span>
+								 <input type="text" name="" title="아이디를 입력해주세요"> 
+								 <span>아이디는 영문,숫자 조합으로 하셔야 합니다. </span>
+							 </label>
+							 <input type="button" value="중복확인">
+						 </td>
+					 </tr>
+					 <tr>
+							<th>암호</th>
+							<td>
+								<legend>
+									<input type="password" name="">
+								</legend>
+							</td>
+						</tr>
+						<tr>
+							<th>암호확인</th>
+							<td>
+								<legend>
+									<input type="password" name="">
+								</legend>
+							</td>
+						</tr>
+					 <tr>
+						 <th scope="row">이름</th>
+						 <td>
+							 <label>
+								 <input type="text" name="">
+							 </label>
+						 </td>
+					 </tr>
+					 <tr>
+							<th scope="row">대화명</th>
+							<td>
+								<label>
+									<input type="text" name="">
+								</label>
+								<button>중복확인</button>
+							 <input type="button" value="중복확인">
+							</td>
+						</tr>
+
+					 <tr>
+							<th scope="row">성별</th><!-- 접근성 고려할때 스코프 필수 삽입 -->
+							<td>
+								<label>
+									<input type="radio" name="rad" checked><!-- 라디오나 셀렉트같은 선택박스는 checked 써줘야 먼저 선택이 된 상태로 노출 / 표준 이전에는 checked="checked" 값까지 입력해줘야 함    -->
+									<span>남</span>
+								</label>
+								<label>
+									<input type="radio" name="rad"><!-- 네임값을 동일하게 하면 단일선택이된다  -->
+									<span>여</span>
+								</label>
+							</td>
+					 
+					 <tr>
+						 <th scope="row">이메일</th>
+						 <td>
+							 <label>
+								 <input type="text" name="" title="이메일 아이디 입력">
+							 </label> @
+							 <label>
+								 <input type="text" name="" title="이메일 주소 입력">
+							 </label>
+							 <label>
+								 <select name="" title="이메일 주소 직접 선택">
+									 <option>선택</option>
+									 <option>naver.com</option>
+									 <option>hanmail.net</option>
+								 </select>
+							 </label>
+						 </td>
+					 </tr>
+					 <tr>
+						 <th>주소</th>
+						 <td>
+							 <div>
+								 <label>
+									 <input type="text" name="">
+								 </label>
+								 <button>우편번호 찾기</button>
+							 </div>
+							 <label>
+								 <input type="text" name="" title="주소입력">
+							 </label>
+						 </td>
+					 </tr>
+					 <tr>
+						 <th>휴대폰</th>
+						 <td>
+							 <div>
+								 <label>
+								 <input type="radio" name="rad">
+								 <span>SKT</span>
+								 </label>
+								 <label>
+								 <input type="radio" name="rad">
+								 <span>KT</span>
+								 </label>
+								 <label>
+								 <input type="radio" name="rad">
+								 <span>LG</span>
+								 </label>
+						 </div>
+						 <div>
+							 <label>
+								 <select name="">
+									 <option>선택</option>
+									 <option selected>010</option> <!-- 옵션에 셀렉티드라고 주면 해당 옵션이 먼저 선택되어 노출됨 -->
+								 </select>
+							 </label> -
+							 <label>
+								 <input type="text" name="">
+							 </label> -
+							 <label>
+								 <input type="text" name="">
+							 </label>
+						 </div>
+						 </td>
+					 </tr>
+					 <tr>
+						 <th>관심사</th>
+						 <td>
+							 <label>
+								 <input type="checkbox" name="" checked>
+								 <span>쇼핑</span>
+							 </label>
+							 <label>
+								 <input type="checkbox" name="">
+								 <span>게임</span>
+							 </label>
+							 <label>
+								 <input type="checkbox" name="">
+								 <span>영화</span>
+							 </label>
+							 <label>
+								 <input type="checkbox" name="">
+								 <span>기타</span>
+							 </label>
+						 </td>
+					 </tr>
+					 <tr>
+						 <th>자기소개</th>
+						 <td>
+							 <label>
+								 <textarea cols=70 rows="7"> 
+	 자기소개 내용을 
+	 써주세요.
+								 </textarea> <!-- 안의 내용 쓸수있는데 쓸때 맨앞으로 붙여서 써줘야 한다 --><!-- 콜스랑 로우스 형식만 갖쳐주면 됨 -->
+							 </label>
+						 </td>
+					 </tr>
+				 </tbody>
+				</table>
+			</div>
+			<div>
+				<button>회원가입</button>
+				<input type="submit" name="" value="확인">
+				<input type="button" name="" value="다시입력">
+				<input type="reset" name="" value="초기화">
+				<input type="hidden" name="" value="초기화">
+			</div>
+
+</body>
+</html>
