@@ -4,164 +4,73 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>웹사이트</title>
-	<style>
+	<title>css3 seletor</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
+	</head>
+<body>
+	<div></div>
+	<p></p>
+	<p></p>
+	<div></div>
+	<div></div>
+	<ul class="ul">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li>
+			<ul>
+				<li></li>
+				<li></li>
+			</ul>
+		</li>
 
-		/* 초기화 */
-		*{
-			margin: 0;
-			padding: 0;
-			border: 0;
-			color: #222;
-			font-size: :13px;
-			font-style: normal;
-			box-sizing:border-box;
-		}
+	</ul>
 
-		html,body{height: 100%;}
-
-		.clear{
-			clear:both;
-			width: 100%;
-			height: auto;
-		}
-
-		body{
-			text-align: center;
-		}
-
-		/* latout */
-		.header{
-			width:700px;
-			height: 80px;
-			background-color: palevioletred;
-			margin: 0 auto;
-			text-align: center;
-		}
-
-		.nav{
-			width: 600px;
-			background-color: plum;
-			margin: 5px auto;
-			border: 2px solid #222;
-		}
-
-		.container{
-			margin: 0 auto;
-			width: 700px;
-			text-align: left;
-			
-		}
-		.main{
-			overflow: hidden; 
-			width: 700px;
-			margin:0 auto 20px;
-			padding:10px 0;
-			
-			
-		}
-		.sidemenu{
-			width: 120px;
-			min-height: 500px;
-			background-color: palegreen;
-			float: left;
-			margin-right: -100%;
-			text-align: center;
-		}
-		.sidemenu .r1 {
-			background-color: bisque;
-			border: 2px solid #222;
-			margin: 10px 20px;
-			height: 50px;
-			
-		}
-		.sidemenu .r2 {
-			background-color:burlywood;
-			border: 2px solid #222;
-			margin: 0 20px;
-			height: 150px;
-			
-		}
-
-		.csection{
-			float: right;
-			width: 550px;
-			min-height: 600px;
-			background-color: papayawhip;
-			text-align: center;
-			
-		}
-
-		.csection .l1{
-			width: 500px;
-			background-color: cadetblue;
-			margin: 10px auto;
-			padding: 10px;
-			border: 2px solid #222;
-		}
-
-		.csection .l2{
-			width: 500px;
-			background-color: cadetblue;
-			margin: 20px auto;
-			padding: 10px;
-			height: 100px;
-			border: 2px solid #222;
-		}
-
-		.csection .l3{
-			width: 500px;
-			background-color: cadetblue;
-			margin: 10px auto;
-			padding: 10px;
-			border: 2px solid #222;
-		}
+	<section>
+		<span>현재</span>
+		<label>
+			<input type="radio" name="rad"><span>남</span>
+		</label>
+		<label>
+				<input type="radio" name="rad"><span>여</span>
+			</label>
+	</section>
+	<!--table>
+		<caption>제목</caption>
+		<colgroup>
+		<col>
+		<col>
+		</colgroup>
+		<thead>
+			<tr>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>100</th>
+				<td>
+					<a href="#">제목입니다.</a>
+				</td>
+			</tr>
+			<tr>
+				<th>100</th>
+				<td>
+					<label>
+						<input type="text/">
+					</label>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table-->
 
 
 
-		.footer{
-			width: 700px;
-			height: 50px;
-			background-color: paleturquoise;
-			margin: 0 auto;
-			text-align: center;
-			padding: 15px;
-			border: 2px solid #222;
-		}
 
-
-
-	</style>
-</head>
-<body>body
-	<header class="header">header
-		<nav class="nav">nav</nav>
-	</header>
- 
-	<!-- //header -->
-	<main class="container"><span>main</span>
-	<main class="main">
-		<article class="sidemenu"> section
-			<section class="r1">header</section>
-			<section class="r2">nav</section>
-		</article>
-		<!-- //sidemenu -->
-		<article class="csection"> section
-				<section class="l1">header</section>
-				<section class="l2">article</section>
-				<section class="l3">footer</section>
-		</article>	
-		<!-- //csection-->
-		
-		<div class="clear"></div>
-	</main>
-	</main>
-	<!-- //footer -->
-	<div class="footer">
-		footer
-	</div>
-
-
-
+	
 </body>
 </html>
