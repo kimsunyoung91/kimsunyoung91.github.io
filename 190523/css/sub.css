@@ -1,0 +1,93 @@
+
+
+/* tabmenu */
+
+.tabgroup{}
+
+.tabmenu{
+	position: relative;
+	border-bottom: 1px solid #222;
+	height: 50px;
+}
+.tabmenu::after{
+	content: "";
+	clear: both;
+	display: block;
+}
+.tabmenu > li{
+	float: left;
+	display:inline-block;
+	width: 50%;
+}
+.tabmenu > li > a{
+	width: 100%;
+	display: inline-block;
+	height: 49px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 15px;
+	background-color: #f4f4f4;
+}
+.tabcnt{
+	display: none;
+	min-height: 700px;
+}
+
+.tabcnt li{
+	position: relative;
+	border-bottom: 1px dotted #dadada;
+	padding-left: 10px;
+	/* background: url() no-repeat 0 50%; */
+}
+
+.tabcnt li a{
+	overflow: hidden;
+	display: inline-block;
+	max-width: calc(100% - 100px);
+	padding: 8px 0;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.tabcnt li a::before{
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top:50%;
+	left: 0;
+	width: 4px;
+	height: 4px;
+	background-color: #dadada;
+	border-radius:3px;
+	transform: translateY(-50%).tabmenu li a;
+	-webkit-transform: translateY(-50%).tabmenu li a;
+	-moz-transform: translateY(-50%).tabmenu li a;
+	-ms-transform: translateY(-50%).tabmenu li a;
+	-o-transform: translateY(-50%).tabmenu li a;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	-ms-border-radius:3px;
+	-o-border-radius:3px;
+}
+
+
+/* tabmenu - 활성화 */
+
+.tabmenu > .on{
+z-index: 1;
+
+}
+.tabmenu > .on > a{
+	display: inline-block;
+	border: 1px solid #222;
+	background-color: #fff;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	border-bottom-color: transparent;
+}
+.tabcnt.on{
+	display: block;
+	padding: 50px 10px;
+}
+
