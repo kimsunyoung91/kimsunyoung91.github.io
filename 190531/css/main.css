@@ -1,0 +1,251 @@
+body{
+	background-color: #222;
+}
+/* layout - header */
+.headerwrap{
+	position: fixed;
+	top: 0;
+	left;
+	width: 100%;
+	background-color: rgba(0,0,0,.5);
+
+}
+.header{
+	position: relative;
+	width: 1100px;
+	height: 90px;
+	margin: 0 auto;
+}
+
+
+/* layout - visual */
+.visualwrap{
+	height: 722px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	background-image:url(../img/main_visual.jpg);
+	background-size: 100% 100%;
+}
+.visual{
+	width: 1100px;
+	margin: 0 auto;
+	position: relative;
+}
+
+/* layout - main */
+.main{
+	width: 100%;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+.main .quick{
+	width: 1100px;
+	margin: 0 auto;
+	border: 1px solid #ededed;
+	border-top:0;
+	border-bottom:0;
+}
+
+.main .quick ul{
+	display: table;
+
+	width: 100%;
+}
+
+.main .quick ul::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.main .quick li{
+	display: table;
+	float: left;
+	width: calc(100% / 4);
+	height: 232px;
+	
+}
+
+.main .quick a{
+	/* display: table-cell; */
+	display: block;
+	width: 100%;
+	height: 232px;
+	border-right: 1px solid #ededed;
+	vertical-align: middle;
+	text-align: center;
+	position: relative;
+}
+
+.main .quick .span{
+	position: absolute;
+	top:50%;
+	left: 0;
+	display: inline-block;
+	width: 100%;
+	padding-top: 50px;
+	font-size: 14px;
+	color:#444;
+	background-repeat:no-repeat;
+	background-position:50% 0;
+	transform: translateX(-50%) ;
+	-webkit-transform: translateX(-50%) ;
+	-moz-transform: translateX(-50%) ;
+	-ms-transform: translateX(-50%) ;
+	-o-transform: translateX(-50%) ;
+}
+
+
+.main .quick li:nth-child(1){
+
+}
+.main .quick li:nth-child(1) span{
+	background-image:url(../img/ico_01.png);
+}
+
+.main .quick li:nth-child(2){
+
+}
+
+.main .quick li:nth-child(2) span{
+	background-image: url(../img/ico_02.png);
+}
+.main .quick li:nth-child(3){
+
+}
+.main .quick li:nth-child(3) span{
+	background-image: url(../img/ico_03.png);
+}
+.main .quick li:nth-child(4){
+	border-right: 0;
+}
+.main .quick li:nth-child(4) span{
+	background-image: url(../img/ico_04.png);
+	border-right: 0;
+}
+
+
+
+.main .group{
+	width: 1100px;
+	margin: 0 auto;
+	/* border:1px solid;
+	border-top-color:#ededed;
+	border-right-color: #ededed;
+	border-left-color: #ededed; */
+	border:1px solid #ededed;
+	border-bottom: 0;
+
+}
+/* layout - footer */
+.footerwrap{
+	background-color: #222;
+}
+.footer{
+	width:1100px;
+	margin: 0 auto;
+}
+.footer .customer{
+	padding: 40px 0;
+	text-align: center;
+
+}
+.footer .customer dl{
+	margin-bottom: 20px;
+
+}
+.footer .customer dt{
+	position: relative;
+	margin-bottom: 20px;
+	padding-bottom: 14px;
+	color:#fff;
+	font-size: 20px;
+}
+.footer .customer dt::after{
+	content: "";
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 38px;
+	height: 3px;
+	background-color: #9bbcff;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+}
+
+.footer .customer .tel{
+	line-height: 24px;
+	font-size: 26px;
+	color:#666;
+}
+.footer .customer .time{
+	line-height: 24px;
+	font-size: 13px;
+	color:#666;
+}
+.footer .fmenu{
+	
+
+}
+.footer .fmenu li{
+	display: inline-block;
+	position: relative;
+	margin-right:0 2.5px;
+	padding-right:12px;
+	color:#999;
+	font-size: 13px;
+}
+
+.footer .fmenu li:first-child{
+	margin-left: 0;
+}
+
+.footer .fmenu li:last-child{
+	margin-right: 0;
+	padding-right: 0;
+}
+
+
+.footer .fmenu li::after{
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 3px;
+	height: 2px;
+
+	background-color:#999;
+}
+.footer .fmenu li:last-child::after{
+	display: none;
+}
+.footer .fmenu a{
+	color: inherit;
+	font-size:  inherit;
+}
+.footer .fmenu b{
+	font-weight: bold;
+	color: inherit;
+	font-size:  inherit;
+}
+
+.footer .addrinfo{
+	padding: 40px 0;
+	border-top:2px solid rgba(51,51,51,.5) ;
+}
+.footer .addr{
+	line-height: 24px;
+	font-size:13px;
+	color:#777;
+}
+.footer .copyright{	
+	line-height: 24px;
+	font-size:13px;
+	color:#777;
+}
