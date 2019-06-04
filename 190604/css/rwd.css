@@ -1,0 +1,181 @@
+/* layout - header */
+.header{
+	width:960px;
+	margin:0 auto;
+}
+/* layout - container */
+.container{
+	width:960px;
+	margin:0 auto;
+}
+.container::after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.portfolio{
+	position: relative;
+	width:100%;
+	height:300px;
+	margin-bottom:10px;
+	background-color:#000;
+}
+
+
+.portfolio .txt{
+	position: absolute;
+	width: 100%;
+	top:0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 72px;
+	margin: auto;
+	text-align: center;
+
+}
+
+.portfolio .txt em{
+	display: inline-block;
+	width: 100%;
+	color: #fff;
+	font-size: 16px;
+}
+
+.portfolio .txt strong{
+	display: inline-block;
+	width: 100%;
+	color: #fff;
+	font-size: 36px;
+
+}
+
+
+
+.portfolio .more{
+	display: block;
+	position: absolute;
+	bottom: 40px;
+	left: 50%;
+	width: 120px;
+	height: 40px;
+	border:1px solid #eee;
+	line-height: 38px;
+	text-align: center;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	border-radius: 40px;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	-ms-border-radius: 40px;
+	-o-border-radius: 40px;
+	color: #fff;
+	font-size: 14px;
+}
+.html5{
+	float:left;
+	width:49.5%;
+	height:475px;
+	margin-bottom:1%;
+	background-color:blue;
+}
+.css3{
+	float:right;
+	width:49.5%;
+	height:475px;
+	margin-bottom:1%;
+	background-color:green;
+}
+.less{
+	clear:both;
+	float:left;
+	width:232.5px;
+	height:232.5px;
+	margin-right:10px;
+	background-color:yellow;
+}
+.js{
+	float:left;
+	width:232.5px;
+	height:232.5px;
+	margin-right:10px;
+	background-color:skyblue;
+}
+.svn{
+	float:left;
+	width:232.5px;
+	height:232.5px;
+	margin-right:10px;
+	background-color:darkcyan;
+}
+.git{
+	float:left;
+	width:232.5px;
+	height:232.5px;
+	background-color:darkorange;
+}
+/* layout - footer */
+.footer{
+	width:960px;
+	margin:0 auto;
+}
+
+
+
+/* media query */
+@media(max-width:959px){
+	.body{
+		padding: 0 15px;
+	}
+	.header{
+		width: 100%;
+	}
+	.container{
+		width: 100%;
+	}
+	.portfolio{
+		height: 376px;
+	}
+	.html5{
+		height: 372px;
+	}
+	.css3{
+		height: 372px;
+	}
+	.less{
+		height: 372px;
+		float: left;
+		width: 49.5%;
+		margin-right: 0;
+	}
+	.js{
+		height: 372px;
+		float: right;
+		width: 49.5%;
+		margin-right: 0;
+		margin-bottom: 1%;
+	}
+	.svn{
+		height: 372px;
+		clear: both;
+		width: 49.5%;
+		float: left;
+		margin-right: 0;
+	}
+	.git{
+		height: 372px;
+		float: left;
+		width: 49.5%;
+		margin-right: 0;
+		margin-bottom: 1%;
+	}
+
+
+	.footer{
+		width: 100%;
+	}
+	
+}
