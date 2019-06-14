@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.header h1 {
+  margin: 0;
+  padding: 0;
+  color: blue;
+}
+.header .nav {
+  position: absolute;
+}
+.header .nav a {
+  display: inline-block;
+}
+.header.type1 {
+  position: relative;
+}
+.header:hover {
+  background-color: #000;
+}
+@media (max-width: 760px) {
+  body {
+    margin: 0;
+  }
+}

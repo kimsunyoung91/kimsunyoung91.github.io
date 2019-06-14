@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no, address=no, email=no, date=no">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="title" content="layout">
+	<meta name="description" content="서브레이아웃 예제 템플릿">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta http-equiv="imagetoolbar" content="no">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<title>서브 레이아웃 예제</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Jaldi">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald">
+	<link rel="stylesheet" type="text/css" href="css/reset.min.css">
+	<link rel="stylesheet" type="text/css" href="css/uiux.css">
+	<script>
+		/* 페이지 접속시 열리는 새 창 팝업 */
+		function getCookie(popname) {
+			let search = popname + "="
+			if (document.cookie.length > 0) { // 쿠키가 설정되어 있다면
+				offset = document.cookie.indexOf(search)
+				if (offset != -1) { // 쿠키가 존재하면
+					offset += search.length
+					// set index of beginning of value
+					end = document.cookie.indexOf(";", offset)
+					// 쿠키 값의 마지막 위치 인덱스 번호 설정
+					if (end == -1) 
+						end = document.cookie.length 
+						return unescape(document.cookie.substring(offset, end))
+				}
+			}
+		}
+		function openNotice() {
+			if (getCookie("ntpopup") != "popup") {
+				window.open("ntpopup.html","ntpopup.html","width=500,height=500,resizable=yes");
+			}
+		}
+		//HTML과 script가 로드된 시점에 발생하는 이벤트
+		window.addEventListener('load', function(){ 
+			openNotice();
+		});
+
+		/* 상단 공지 레이어 팝업 */
+		function setCookie( name, value, expirehours ) {
+			let todayDate = new Date();
+			todayDate.setHours( todayDate.getHours() + expirehours );
+			document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+		}
+		function topBnCloseWin() {
+			document.getElementById('topBanner').className = "none";
+			document.getElementById('topBnOpen').className = "block";
+		}
+		function topBnOpenWin() {
+			document.getElementById('topBanner').className = "block";
+			document.getElementById('topBnOpen').className = "none";
+		}
+		function todayCloseWin() {
+			setCookie( "ncookie", "done" , 24 );
+			topBnCloseWin()
+		}
+		/* //상단 공지 레이어 팝업 */
+	</script>
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script type="text/javascript" src="//oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<!-- 상단 공지 레이어 팝업 -->
+	<div id="topBanner" class="block" style="background-color:#0d291d;">
+		<div class="topbnwrap">
+			<div class="topbncnt">
+				<a href="#"><img src="http://image.gmarket.co.kr/DA/2018/11/30/20181130170715741593_4000042549_1.JPG" alt=""></a>
+			</div>
+			<!-- //.topbncnt -->
+			<div class="topbncontrol">
+				<a href="#" class="topbncloseday" onclick="todayCloseWin();">사이트 접속 시 오늘하루 숨기기</a>
+				<a href="#" class="topbnclose" onclick="topBnCloseWin();">배너 닫기</a>
+			</div>
+			<!-- //.topbncontrol -->
+		</div>
+		<!-- //.topbnwrap -->
+	</div>
+	<!-- //.topbanner 상단 공지 레이어 팝업 -->
+
+	<div class="wrap">
+		<div class="headerwrap">
+			<header class="header">
+				<h1><a href="#">Logo</a></h1>
+				<ul class="tnb">
+					<li id="topBnOpen"><a href="#" onclick="topBnOpenWin();">상단배너 열기</a></li>
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">LOGIN</a></li>
+					<li><a href="#">SITEMAP</a></li>
+				</ul>
+			</header>
+			<!-- //.header -->
+			<button class="btn-mo"><i class="navicon"></i><span class="txthide">메뉴열기</span></button>
+			<div class="navigation">
+				<nav class="nav">
+					<ul class="gnb">
+						<li class="dep1"><a href="#">HTML</a>
+							<ul class="dep2">
+								<li><a href="#">HTML</a></li>
+								<li><a href="#">CSS</a></li>
+								<li><a href="#">JAVASCRIPT</a></li>
+								<li><a href="#">JQUERY</a></li>
+								<li><a href="#">ACCESSIBILITY</a></li>
+								<li><a href="#">LESS</a></li>
+								<li><a href="#">SVN</a></li>
+								<li><a href="#">GIT</a></li>
+							</ul>
+						</li>
+						<li class="dep1"><a href="#">CSS</a>
+							<ul class="dep2">
+								<li><a href="#">HTML</a></li>
+								<li><a href="#">CSS</a></li>
+								<li><a href="#">JAVASCRIPT</a></li>
+								<li><a href="#">JQUERY</a></li>
+								<li><a href="#">ACCESSIBILITY</a></li>
+								<li><a href="#">LESS</a></li>
+								<li><a href="#">SVN</a></li>
+								<li><a href="#">GIT</a></li>
+							</ul>
+						</li>
+						<li class="dep1"><a href="#">JAVASCRIPT</a>
+							<ul class="dep2">
+								<li><a href="#">HTML</a></li>
+								<li><a href="#">CSS</a></li>
+								<li><a href="#">JAVASCRIPT</a></li>
+								<li><a href="#">JQUERY</a></li>
+								<li><a href="#">ACCESSIBILITY</a></li>
+								<li><a href="#">LESS</a></li>
+								<li><a href="#">SVN</a></li>
+								<li><a href="#">GIT</a></li>
+							</ul>
+						</li>
+						<li class="dep1"><a href="#">JQUERY</a>
+							<ul class="dep2">
+								<li><a href="#">HTML</a></li>
+								<li><a href="#">CSS</a></li>
+								<li><a href="#">JAVASCRIPT</a></li>
+								<li><a href="#">JQUERY</a></li>
+								<li><a href="#">ACCESSIBILITY</a></li>
+								<li><a href="#">LESS</a></li>
+								<li><a href="#">SVN</a></li>
+								<li><a href="#">GIT</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="bgnav"></div>
+			</div>
+			<!-- //.navigation -->
+		</div>
+		<!-- //.headerwrap -->
+		<main class="container">
+			<div class="sidemenu depmenu">
+				<h2 class="snbtitle">타이틀</h2>
+				<div class="snb">
+					<ul class="menu">
+						<li class="dep1">
+							<a href="#">회사소개</a>
+							<ul class="dep dep2">
+								<li>
+									<a href="#">회사소개1</a>
+									<ul class="dep dep3">
+										<li>
+											<a href="#">회사소개1_1</a>
+											<ul class="dep dep4">
+												<li><a href="#">회사소개1_1_1</a></li>
+												<li><a href="#">회사소개1_1_2</a></li>
+												<li><a href="#">회사소개1_1_3</a></li>
+												<li><a href="#">회사소개1_1_4</a></li>
+											</ul>
+										</li>
+										<li><a href="#">회사소개1_2</a></li>
+										<li><a href="#">회사소개1_3</a></li>
+										<li><a href="#">회사소개1_4</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">회사소개2</a>
+									<ul class="dep dep3">
+										<li><a href="#">회사소개2_1</a></li>
+										<li><a href="#">회사소개2_2</a></li>
+										<li><a href="#">회사소개2_3</a></li>
+										<li><a href="#">회사소개2_4</a></li>
+									</ul>
+								</li>
+								<li><a href="#">회사소개3</a></li>
+								<li><a href="#">회사소개4</a></li>
+							</ul>
+						</li>
+						<li class="dep1">
+							<a href="#">대표 인사말</a>
+						</li>
+						<li class="dep1">
+							<a href="#">연혁</a>
+							<ul class="dep dep2">
+								<li><a href="#">연혁1_1</a></li>
+								<li><a href="#">연혁1_2</a></li>
+								<li><a href="#">연혁1_3</a></li>
+								<li><a href="#">연혁1_4</a></li>
+							</ul>
+						</li>
+						<li class="dep1">
+							<a href="#">조직도</a>
+						</li>
+					</ul>
+				</div>
+				<!-- //.snb -->
+			</div>
+			<!-- //.sidemenu -->
+
+			<div class="csection">
+				<ul class="location">
+					<li>홈</li>
+					<li><strong>서브페이지</strong></li>
+				</ul>
+				<!-- //.location -->
+				<h2 id="cTitle" class="ctitle">타이틀</h2>
+				<button class="btn btn-print" onclick="uxPrintPage();">인쇄하기</button>
+				<div id="printBody">
+					<div class="chead">
+						본문 상단 내용이 들어갑니다.
+					</div>
+					<!-- //.chead -->
+					<div class="cbody">
+						<ul class="ctabmenu">
+							<li class="on"><a href="#">탭 메뉴</a></li>
+							<li><a href="#">팝업</a></li>
+							<li><a href="#">기타</a></li>
+						</ul>
+						<section class="ctabcnt on">
+							<h3 class="hxtit">hx type1</h3>
+							<div class="hxgroup faq">
+								<h3 class="hx on"><a href="#">질문</a></h3>
+								<div class="hxcnt on">내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. </div>
+								<h3 class="hx"><a href="#">질문</a></h3>
+								<div class="hxcnt">내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. </div>
+								<h3 class="hx"><a href="#">질문</a></h3>
+								<div class="hxcnt">내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. </div>
+								<h3 class="hx"><a href="#">질문</a></h3>
+								<div class="hxcnt">내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. </div>
+							</div>
+							<!-- //.hxgroup.faq -->
+
+							<h3 class="hxtit">hx type2</h3>
+							<div class="hxgroup newest float-l">
+								<h4 class="hx on"><a href="#">공지사항</a></h4>
+								<div class="hxcnt on">
+									<ul>
+										<li><a href="#">공지사항 최신글입니다.공지사항 최신글입니다.공지사항 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">공지사항 최신글입니다.공지사항 최신글입니다.공지사항 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">공지사항 최신글입니다.공지사항 최신글입니다.공지사항 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">공지사항 최신글입니다.공지사항 최신글입니다.공지사항 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">공지사항 최신글입니다.공지사항 최신글입니다.공지사항 최신글입니다.</a><span>2018.12.17</span></li>
+									</ul>
+									<a href="#" class="btn-more" title="공지사항 더보기">more</a>
+								</div>
+								<h4 class="hx"><a href="#">보도자료</a></h4>
+								<div class="hxcnt">
+									<ul>
+										<li><a href="#">보도자료 최신글입니다.보도자료 최신글입니다.보도자료 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">보도자료 최신글입니다.보도자료 최신글입니다.보도자료 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">보도자료 최신글입니다.보도자료 최신글입니다.보도자료 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">보도자료 최신글입니다.보도자료 최신글입니다.보도자료 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">보도자료 최신글입니다.보도자료 최신글입니다.보도자료 최신글입니다.</a><span>2018.12.17</span></li>
+									</ul>
+									<a href="#" class="btn-more" title="보도자료 더보기">more</a>
+								</div>
+								<h4 class="hx"><a href="#">FAQ</a></h4>
+								<div class="hxcnt">
+									<ul>
+										<li><a href="#">FAQ 최신글입니다.FAQ 최신글입니다.FAQ 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">FAQ 최신글입니다.FAQ 최신글입니다.FAQ 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">FAQ 최신글입니다.FAQ 최신글입니다.FAQ 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">FAQ 최신글입니다.FAQ 최신글입니다.FAQ 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">FAQ 최신글입니다.FAQ 최신글입니다.FAQ 최신글입니다.</a><span>2018.12.17</span></li>
+									</ul>
+									<a href="#" class="btn-more" title="FAQ 더보기">more</a>
+								</div>
+							</div>
+
+							<div class="hxgroup newest float-r">
+								<h4 class="hx on"><a href="#">공지사항</a></h4>
+								<div class="hxcnt on">
+									<ul>
+										<li><a href="#">공지사항 최신글입니다.공지사항 최신글입니다.공지사항 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">공지사항 최신글입니다.공지사항 최신글입니다.공지사항 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">공지사항 최신글입니다.공지사항 최신글입니다.공지사항 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">공지사항 최신글입니다.공지사항 최신글입니다.공지사항 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">공지사항 최신글입니다.공지사항 최신글입니다.공지사항 최신글입니다.</a><span>2018.12.17</span></li>
+									</ul>
+									<a href="#" class="btn-more" title="공지사항 더보기">more</a>
+								</div>
+								<h4 class="hx"><a href="#">보도자료</a></h4>
+								<div class="hxcnt">
+									<ul>
+										<li><a href="#">보도자료 최신글입니다.보도자료 최신글입니다.보도자료 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">보도자료 최신글입니다.보도자료 최신글입니다.보도자료 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">보도자료 최신글입니다.보도자료 최신글입니다.보도자료 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">보도자료 최신글입니다.보도자료 최신글입니다.보도자료 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">보도자료 최신글입니다.보도자료 최신글입니다.보도자료 최신글입니다.</a><span>2018.12.17</span></li>
+									</ul>
+									<a href="#" class="btn-more" title="보도자료 더보기">more</a>
+								</div>
+								<h4 class="hx"><a href="#">FAQ</a></h4>
+								<div class="hxcnt">
+									<ul>
+										<li><a href="#">FAQ 최신글입니다.FAQ 최신글입니다.FAQ 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">FAQ 최신글입니다.FAQ 최신글입니다.FAQ 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">FAQ 최신글입니다.FAQ 최신글입니다.FAQ 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">FAQ 최신글입니다.FAQ 최신글입니다.FAQ 최신글입니다.</a><span>2018.12.17</span></li>
+										<li><a href="#">FAQ 최신글입니다.FAQ 최신글입니다.FAQ 최신글입니다.</a><span>2018.12.17</span></li>
+									</ul>
+									<a href="#" class="btn-more" title="FAQ 더보기">more</a>
+								</div>
+							</div>
+							<!-- //.hxgroup.hx -->
+
+							<h3 class="hxtit">dl type1</h3>
+							<div class="dlgroup faq">
+								<dl>
+									<dt class="on"><a href="#">질문</a></dt>
+									<dd class="on">내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. </dd>
+									<dt><a href="#">질문</a></dt>
+									<dd>내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. </dd>
+									<dt><a href="#">질문</a></dt>
+									<dd>내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. </dd>
+								</dl>
+							</div>
+							<!-- //.dlgroup -->
+
+							<h3 class="hxtit">ul type1</h3>
+							<div class="ulgroup faq">
+								<ul>
+									<li class="on">
+										<a href="#" class="que">질문</a>
+										<div class="ans">
+											내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 
+										</div>
+									</li>
+									<li>
+										<a href="#" class="que">질문</a>
+										<div class="ans">
+											내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 
+										</div>
+									</li>
+									<li>
+										<a href="#" class="que">질문</a>
+										<div class="ans">
+											내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 내용입니다. 
+										</div>
+									</li>
+								</ul>
+							</div>
+						</section>
+						<section class="ctabcnt">
+							<h3 class="hxtit">레이어 팝업</h3>
+							<button class="btn btn-lypop">레이어 팝업</button>
+							<div class="lypop">
+								<div class="lypopcont">
+									<dl>
+										<dt>레이어 타이틀</dt>
+										<dd>
+											레이어 콘텐츠 내용
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<!-- //.lypop -->
+							<h3 class="hxtit">새창 팝업</h3>
+							<a href="https://www.daum.net" onclick="newWinPopup(this.href,'daum','300','300','no');return false" class="btn btn-newpop">새 창 팝업 가운데 띄우기1</a><br>
+							<a href="https://www.naver.com" onclick="newWinPopup(this.href,'naver','600','500','yes');return false" class="btn btn-newpop">새 창 팝업 가운데 띄우기2</a>
+						</section>
+						<section class="ctabcnt">
+							<h3 class="hxtit">현재시간 표시</h3>
+							<h3 class="hxtit">타이머</h3>
+						</section>
+					</div>
+					<!-- //.cbody -->
+					<div class="cfoot">
+						본문 하단 내용이 들어갑니다.
+					</div>
+					<!-- //.cfoot -->
+				</div>
+			</div>
+			<!-- //.csection -->
+		</main>
+		<!-- //.container -->
+		<div class="footerwrap">
+			<footer class="footer">
+				&copy All Right Reserved.
+			</footer>
+			<!-- //.footer -->
+		</div>
+		<!-- //.footerwrap -->
+		<a href="#" class="btn btn-top">TOP</a>
+	</div>
+	<!-- //.wrap -->
+
+	<script src="js/jquery/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery/jquery.easing.min.js"></script>
+	<script src="js/common/uxDetect.min.js"></script>
+	<script src="js/common/uiux.js"></script>
+</body>
+</html>

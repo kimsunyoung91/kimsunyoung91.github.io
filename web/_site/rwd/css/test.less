@@ -1,0 +1,36 @@
+@color1:#000;
+@color2:#f00;
+@color3:blue;
+
+@size1:760px;
+
+
+body{
+	margin:0;
+	padding:0;
+}
+
+.header{
+	h1{
+		margin:0;
+		padding:0;
+		color:@color3;
+	}
+	.nav{
+		position:absolute;
+		a{
+			display:inline-block;
+		}
+	}
+	&.type1{
+		position:relative;
+	}
+	&:hover{
+		background-color:#000;
+	}
+}
+@media(max-width:@size1){
+	body{
+		margin:0;
+	}
+}

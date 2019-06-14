@@ -1,0 +1,46 @@
+body{
+	background-color:#000;
+}
+
+/* ul{
+
+}
+ul li{
+
+}
+ul li a{
+
+} */
+@color:#000;
+
+.clear{
+	content:"";
+	display:block;
+	clear:both;
+}
+
+ul{
+	&.a{
+		padding:10px;
+	}
+	&.b{
+		border:1px solid #f00;
+	}
+	margin:0;
+	li{
+		padding:10px;
+		&::after{
+			// content:"";
+			// display:block;
+			// clear:both;
+			.clear;
+		}
+		a{
+			border:1px solid #000;
+			color:@color;
+			&:hover{
+				text-decoration:underline;
+			}
+		}
+	}
+}

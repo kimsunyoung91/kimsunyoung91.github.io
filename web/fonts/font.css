@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* NotoSansKR */
+/* @font-face{
+	font-family:'Noto Sans KR';
+	src:url('NotoSansKR-Regular.eot');
+	src:url('NotoSansKR-Regular.eot?#iefix') format('embedded-opentype'),
+			url('NotoSansKR-Regular.woff2') format('woff2'),
+			url('NotoSansKR-Regular.woff') format('woff'),
+			url('NotoSansKR-Regular.svg#NotoSansKR-Regular') format('svg');
+	font-weight:400;
+	font-style:normal;
+}
+@font-face{
+	font-family:'Noto Sans KR';
+	src:url('NotoSansKR-Bold.eot');
+	src:url('NotoSansKR-Bold?#iefix') format('embedded-opentype'),
+			url('NotoSansKR-Bold.woff2') format('woff2'),
+			url('NotoSansKR-Bold.woff') format('woff'),
+			url('NotoSansKR-Bold.svg#NotoSansKR-Bold') format('svg');
+	font-weight:700;
+	font-style:normal;
+} */
+@font-face{
+	font-family:'Noto Sans KR';
+	src:url('notokr-regular.eot');
+	src:url('notokr-regular.eot?#iefix') format('embedded-opentype'),
+			url('notokr-regular.woff2') format('woff2'),
+			url('notokr-regular.woff') format('woff'),
+			url('notokr-regular.svg#NotoSansKR-Regular') format('svg');
+	font-weight:400;
+	font-style:normal;
+}
+@font-face{
+	font-family:'Noto Sans KR';
+	src:url('notokr-bold.eot');
+	src:url('notokr-bold?#iefix') format('embedded-opentype'),
+			url('notokr-bold.woff2') format('woff2'),
+			url('notokr-bold.woff') format('woff'),
+			url('notokr-bold.svg#notokr-bold') format('svg');
+	font-weight:600;
+	font-style:normal;
+}
+/* Montserrat */
+@font-face{
+	font-family:'Montserrat';
+	src:url('Montserrat-Regular.eot');
+	src:url('Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+			url('Montserrat-Regular.woff2') format('woff2'),
+			url('Montserrat-Regular.woff') format('woff'),
+			url('Montserrat-Regular.svg#Montserrat-Regular') format('svg');
+	font-weight:400;
+	font-style:normal;
+}
+@font-face{
+	font-family:'Montserrat';
+	src:url('Montserrat-Bold.eot');
+	src:url('Montserrat-Bold?#iefix') format('embedded-opentype'),
+			url('Montserrat-Bold.woff2') format('woff2'),
+			url('Montserrat-Bold.woff') format('woff'),
+			url('Montserrat-Bold.svg#Montserrat-Bold') format('svg');
+	font-weight:700;
+	font-style:normal;
+}

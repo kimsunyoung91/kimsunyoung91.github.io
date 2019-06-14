@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>less</title>
+	<link rel="stylesheet" type="text/css" href="fonts/font.css">
+	<script src="js/jquery/jquery-1.12.4.min.js"></script>
+	<script src="js/common/uxDetect.min.js"></script>
+	<style>
+		body{
+			font-family:'Montserrat','Noto Sans KR';
+		}
+		.chrome body{
+			background-color:aqua;
+		}
+		.macos body{
+			background-color:chartreuse;
+		}
+		.ie body{
+			background-color:#000;
+		}
+		.ie10 body{
+			background-color:blue;
+		}
+		.ie9 body{
+			background-color:red;
+		}
+		span{
+			font-family:'Montserrat';
+		}
+		.desktop button{
+			display:none;
+		}
+		.device button{
+			display:inline-block;
+		}
+		.iphone button{
+			display:inline-block;
+		}
+		.hx{
+			background-color:gray;
+			border:1px solid #222;
+		}
+		.tabcnt{
+			display:none;
+		}
+		.hx.on{
+			background-color:#fff;
+			border:2px solid #000;
+			text-align:center;
+			font-weight:bold;
+		}
+		.tabcnt.on{
+			display:block;
+		}
+		.btntop{
+			display:inline-block;
+			position:fixed;
+			bottom:-50px;
+			right:20px;
+			padding:30px;
+			background-color:#000;
+			color:#fff;
+			text-align:center;
+			opacity:0;
+			transition:all .5s;
+		}
+		.btntop.sticky{
+			bottom:20px;
+			opacity:1
+		}
+		.divbox{
+			display:none;
+			position:fixed;
+			top:0;
+			right:0;
+			bottom:0;
+			left:0;
+			width:200px;
+			height:200px;
+			margin:auto;
+			background-color:gray;
+			opacity:0;
+			transition:all .5s;
+		}
+		.divbox.sticky{
+			opacity:0;
+		}
+		.snb li{
+			padding:10px;
+			border:1px solid #000;
+		}
+		.snb .dep{
+		}
+		@media print{
+			.header,.footer{
+				display:none;
+			}
+			.csection{
+				width:700px;
+				border:1px solid #000;
+				text-align:center;
+			}
+		}
+	</style>
+	<script>
+		// alert('준비중입니다');
+		$(function(){
+			$('.tabgroup').each(function (i, e) { 
+				let $hx = $(e).find('.hx');
+				let $hxCnt = $(e).find('.tabcnt');
+				$hx.on('click focusin', function(){
+					$(this).addClass('on').siblings('.hx').removeClass('on');
+					$(this).next().addClass('on').siblings('.tabcnt').removeClass('on');
+					return false;
+				});
+			})
+
+			$('.qna').each(function (i, e) {
+				let $li = $(e).find('li');
+				let $liBtn = $(e).find('.q');
+				let $liCnt = $(e).find('.a');
+				$liBtn.on('click focusin', function () {
+					$(this).parent().addClass('on').siblings().removeClass('on');
+					return false;
+				});
+			});
+
+
+
+			/* Top Button Scroll */
+			$('.btntop').on('click', function () {
+				$('html,body').animate({
+					scrollTop: 0
+				}, 1000);
+				return false;
+			});
+
+			// top button 스크롤 내렸을 경우 보이게 처리
+			let $win = $(window);
+			let isFixed = false;
+			let $navOffset = $('.header').offset();
+			function scFix() {
+				if ( $win.scrollTop() <= $navOffset.top ) {
+					if ( !isFixed ) {
+						isFixed = true;
+						$('.btntop').removeClass('sticky');
+						$('.divbox').removeClass('sticky');
+					}
+				} else if ( isFixed ) {
+					isFixed = false;
+					$('.btntop').addClass('sticky');
+					$('.divbox').addClass('sticky');
+				}
+			}
+			$win.on('scroll', scFix);
+			scFix();
+
+
+			/* 좌측 메뉴 */
+			/* Depth Menu */
+			let $depMenu = $('.snb');
+			$depMenu.find('li').each(function(i, e){
+				//하위 메뉴가 있다면 해당 li에 클래스 생성
+				if( $(e).children().length > 1 ){
+					$(e).addClass('arr');
+				} else {
+					$(e).addClass('narr');
+				}
+
+				//클릭 이벤트
+				$(e).click(function(){
+					if( $(e).is('.arr') ){
+						let speed = 200;
+						let open = 'open';
+						//해당 메뉴 열고 닫힘
+						$(e).toggleClass(open).find('>.dep').slideToggle(speed);
+						//닫을경우 해당 메뉴의 하위 모두 닫힘
+						$(e).find('li').removeClass(open).find('.dep').slideUp(speed);
+						//형제 포함 형제의 하위메뉴 모두 닫음
+						$(e).siblings().removeClass(open).find('.dep').slideUp(speed).find('li').removeClass(open);
+						return false;
+					}
+				});
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="header" style="height:150px;"></div>
+	<div class="divbox"></div>
+	<a href="#" class="btn btntop">TOP</a>
+
+	<!-- 좌측메뉴 -->
+	<div class="snb">
+		<ul>
+			<li><a href="#"></a>
+				<ul class="dep">
+					<li><a href=""></a></li>
+					<li><a href=""></a></li>
+					<li><a href=""></a>
+						<ul class="dep">
+							<li><a href=""></a></li>
+							<li><a href=""></a></li>
+							<li><a href=""></a>
+								<ul class="dep">
+									<li><a href=""></a></li>
+									<li><a href=""></a></li>
+									<li><a href=""></a>
+										<ul class="dep">
+											<li><a href=""></a></li>
+											<li><a href=""></a></li>
+											<li><a href=""></a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+		</ul>
+	</div>
+
+
+
+
+	<div class="tabgroup">
+		<h2 class="hx on">공지사항</h2>
+		<div class="tabcnt on">
+			<ul>
+				<li><a href="#">공지사항 내용입니다</a></li>
+				<li><a href="#">공지사항 내용입니다</a></li>
+				<li><a href="#">공지사항 내용입니다</a></li>
+			</ul>
+		</div>
+		<h2 class="hx">FAQ</h2>
+		<div class="tabcnt">
+			<ul>
+				<li><a href="#">FAQ 내용입니다</a></li>
+				<li><a href="#">FAQ 내용입니다</a></li>
+				<li><a href="#">FAQ 내용입니다</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="tabgroup style2">
+		<h2 class="hx on">공지사항</h2>
+		<div class="tabcnt on">
+			<ul>
+				<li><a href="#">공지사항 내용입니다</a></li>
+				<li><a href="#">공지사항 내용입니다</a></li>
+				<li><a href="#">공지사항 내용입니다</a></li>
+			</ul>
+		</div>
+		<h2 class="hx">FAQ</h2>
+		<div class="tabcnt">
+			<ul>
+				<li><a href="#">FAQ 내용입니다</a></li>
+				<li><a href="#">FAQ 내용입니다</a></li>
+				<li><a href="#">FAQ 내용입니다</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="tabgroup">
+		<h2 class="hx on">공지사항</h2>
+		<div class="tabcnt on">
+			<ul>
+				<li><a href="#">공지사항 내용입니다</a></li>
+				<li><a href="#">공지사항 내용입니다</a></li>
+				<li><a href="#">공지사항 내용입니다</a></li>
+			</ul>
+		</div>
+		<h2 class="hx">FAQ</h2>
+		<div class="tabcnt">
+			<ul>
+				<li><a href="#">FAQ 내용입니다</a></li>
+				<li><a href="#">FAQ 내용입니다</a></li>
+				<li><a href="#">FAQ 내용입니다</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="tabgroup">
+		<h2 class="hx on">공지사항</h2>
+		<div class="tabcnt on">
+			<ul>
+				<li><a href="#">공지사항 내용입니다</a></li>
+				<li><a href="#">공지사항 내용입니다</a></li>
+				<li><a href="#">공지사항 내용입니다</a></li>
+			</ul>
+		</div>
+		<h2 class="hx">FAQ</h2>
+		<div class="tabcnt">
+			<ul>
+				<li><a href="#">FAQ 내용입니다</a></li>
+				<li><a href="#">FAQ 내용입니다</a></li>
+				<li><a href="#">FAQ 내용입니다</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+
+	<div class="qna">
+		<ul>
+			<li class="on">
+				<p class="q">질문</p>
+				<div class="a">답변</div>
+			</li>
+			<li>
+				<p class="q">질문</p>
+				<div class="a">답변</div>
+			</li>
+		</ul>
+	</div>
+	<!-- <div class="header">상단영역</div>
+	<div class="csection">
+		폰트 test 1234 TEST Font
+		<button>버튼</button>
+	</div>
+	<div class="footer">하단영역</div> -->
+<!-- 
+/****** Unicode Range **********/
+/**** 영문 : ****/ 
+U+0020-U+0020,U+0041-U+005A,U+0061-U+007A, 
+/**** 숫자 : ****/
+U+0030-U+0039,U+002E-U+002E ,
+/**** 한글 : ****/
+U+0020-U+007E,U+1100-U+11F9,U+3000-U+303F,U+3131-U+318E,U+327F-U+327F,U+AC00-U+D7A3,U+FF01-U+FF60, 
+/**** 라틴 : ****/
+U+0020-U+002F,U+0030-U+0039,U+003A-U+0040,U+0041-U+005A,U+005B-U+0060,U+0061-U+007A,U+007B-U+007E;
+
+출처: https://hiddenid01.tistory.com/13 [Hiddenid's Tech Note & Blog]
+	-->
+</body>
+</html>
