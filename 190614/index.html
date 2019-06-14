@@ -5,15 +5,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>less</title>
-	<link rel="stylesheet" type="text/css" href="fonts/font.css">
-	<script src="js/jquery/jquery-1.12.4.min.js"></script>
-	<script src="js/common/uxDetect.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../190614/fonts/font.css">
+	<link rel="stylesheet" type="text/css" href="../190614/css/jquery.bxslider.css">
+	<script src="../190614/js/jquery/jquery-1.12.4.min.js"></script>
+	<script src="../190614/js/common/uxDetect.min.js"></script>
+	<script src="../190614/js/jquery.bxslider.js"></script>
 	<style>
 		body{
 			font-family:'Montserrat','Noto Sans KR';
 		}
 		.chrome body{
-			background-color:aqua;
+			background-color:paleturquoise;
 		}
 		.macos body{
 			background-color:chartreuse;
@@ -104,6 +106,25 @@
 				text-align:center;
 			}
 		}
+
+		.img div{
+			width: 88px;
+			height: 88px;
+			background-repeat: no-repeat;
+			background-image: url(../190614/images/icon_sample.png);
+		}
+		.a{}
+		.a:hover{background-position: 0 -92px}
+
+		.b{background-position:-92px 0;
+		}
+		.b:hover{background-position:-92px -92px;
+		}
+		.c{background-position:-184px 0;}
+		.c:hover{background-position:-184px -92px;}
+
+
+
 	</style>
 	<script>
 		// alert('준비중입니다');
@@ -186,9 +207,35 @@
 				});
 			});
 		})
+
+
+				$('.bxslider').bxSlider({
+			auto: true,
+			autoControls: true,
+			stopAutoOnClick: true,
+			pager: true,
+			slideWidth: 600
+		});
+
 	</script>
 </head>
 <body>
+
+	<div class="img">
+		<div class="a"></div>
+		<div class="b"></div>
+		<div class="c"></div>
+	</div>
+
+
+
+
+		<div class="bxslider">
+				<div><img src="../190614/images/pic1.jpg" title="Funky roots"></div>
+				<div><img src="../190614/images/pic2.jpg" title="The long and winding road"></div>
+				<div><img src="../190614/images/pic3.jpg" title="Happy trees"></div>
+			</div>
+
 	<div class="header" style="height:150px;"></div>
 	<div class="divbox"></div>
 	<a href="#" class="btn btntop">TOP</a>
